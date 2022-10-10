@@ -1,7 +1,5 @@
 package com.angryzyh.ylb.service;
 
-import com.angryzyh.ylb.pojo.po.UserPo;
-
 /**
  * @author Angryzyh
  * @description 针对表【u_user(用户表)】的数据库操作Service

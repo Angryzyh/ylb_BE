@@ -6,6 +6,10 @@ server:
 spring:
   application:
     name: micr-web
+  mvc:
+    #解决springboot2.6.2使用swagger的问题
+    pathmatch:
+      matching-strategy: ant_path_matcher
 
 dubbo:
   application:

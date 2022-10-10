@@ -39,6 +39,9 @@
         <dubbo-spring-boot-starter.version>3.1.1</dubbo-spring-boot-starter.version>
         <dubbo-dependencies-zookeeper.version>3.1.1</dubbo-dependencies-zookeeper.version>
         <druid-spring-boot-starter.version>1.2.13</druid-spring-boot-starter.version>
+        <springfox-swagger.version>2.9.2</springfox-swagger.version>
+        <swagger-bootstrap-ui.version>1.9.6</swagger-bootstrap-ui.version>
+        <swagger-models.version>1.6.1</swagger-models.version>
     </properties>
 
     <dependencyManagement>
@@ -96,6 +99,29 @@
                         <artifactId>slf4j-log4j12</artifactId>
                     </exclusion>
                 </exclusions>
+            </dependency>
+
+            <!--Swagger依赖-->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${springfox-swagger.version}</version>
+            </dependency>
+            <!--Swagger UI-->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${springfox-swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>swagger-bootstrap-ui</artifactId>
+                <version>${swagger-bootstrap-ui.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-models</artifactId>
+                <version>${swagger-models.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

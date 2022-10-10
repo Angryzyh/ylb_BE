@@ -1,29 +1,17 @@
 package com.angryzyh.ylb.util;
 
 import com.angryzyh.ylb.constant.REnum;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
+import io.swagger.annotations.ApiModelProperty;
 
-import java.io.Serializable;
-
-/**
- * R 封装 Controller返回结果集
- *
- * @author Angryzyh
- * @since 2022 -09-03 20:46:38
- */
-@Getter
-@AllArgsConstructor
-public class R<T> implements Serializable {
-    private static final long serialVersionUID = 4974214711149403407L;
-
+public class R<T>{
+    @ApiModelProperty(value = "状态码",dataType = "String")
     private String code;
-
+    @ApiModelProperty(value = "响应信息",dataType = "String")
     private String msg;
-
+    @ApiModelProperty(value = "响应数据")
     private T data;
 
-    R(String code, String msg) {
+    public R(String code, String msg) {
         this.code = code;
         this.msg = msg;
     }
@@ -33,18 +21,20 @@ public class R<T> implements Serializable {
         this.msg = REnum.OK.getMsg();
     }
 
-    public static R ok() {
-        return new R();
+    public R(String code, String msg, T data) {
+        this.code = code;
+        this.msg = msg;
+        this.data = data;
+    }
+
+    public static <T> R<T> ok() {
+        return new R<T>();
     }
 
     public static <T> R<T> ok(T data) {
-        R r = ok();
+        R<T> r = ok();
         r.setData(data);
         return r;
-    }
-
-    public void setData(T data) {
-        this.data = data;
     }
 
     public static R error() {
@@ -56,7 +46,32 @@ public class R<T> implements Serializable {
     }
 
     public static R error(String code, String msg) {
-        R r = new R(code, msg);
+        R r = new R<>(code, msg);
         return r;
+    }
+
+
+    public void setData(T data) {
+        this.data = data;
+    }
+
+    public T getData(){
+        return data;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 }

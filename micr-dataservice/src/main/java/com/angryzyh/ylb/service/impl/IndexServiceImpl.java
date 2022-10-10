@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 
 @Service
-@DubboService(interfaceClass = IndexService.class,version = "0.0.1", timeout = 20000)
+@DubboService(interfaceClass = IndexService.class,version = "0.0.1", timeout = 30000)
 public class IndexServiceImpl implements IndexService {
 
     @Autowired
