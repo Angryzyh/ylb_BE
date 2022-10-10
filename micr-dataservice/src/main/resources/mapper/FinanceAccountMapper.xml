@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.angryzyh.ylb.mapper.FinanceAccountMapper">
+
+    <resultMap id="BaseResultMap" type="com.angryzyh.ylb.pojo.po.FinanceAccountPo">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="uid" column="uid" jdbcType="INTEGER"/>
+            <result property="availableMoney" column="available_money" jdbcType="DECIMAL"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,uid,available_money
+    </sql>
+</mapper>

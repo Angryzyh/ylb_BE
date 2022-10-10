@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.angryzyh.ylb.mapper.RechargeRecordMapper">
+
+    <resultMap id="BaseResultMap" type="com.angryzyh.ylb.pojo.po.RechargeRecordPo">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="uid" column="uid" jdbcType="INTEGER"/>
+            <result property="rechargeNo" column="recharge_no" jdbcType="VARCHAR"/>
+            <result property="rechargeStatus" column="recharge_status" jdbcType="INTEGER"/>
+            <result property="rechargeMoney" column="recharge_money" jdbcType="DECIMAL"/>
+            <result property="rechargeTime" column="recharge_time" jdbcType="TIMESTAMP"/>
+            <result property="rechargeDesc" column="recharge_desc" jdbcType="VARCHAR"/>
+            <result property="channel" column="channel" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,uid,recharge_no,
+        recharge_status,recharge_money,recharge_time,
+        recharge_desc,channel
+    </sql>
+</mapper>

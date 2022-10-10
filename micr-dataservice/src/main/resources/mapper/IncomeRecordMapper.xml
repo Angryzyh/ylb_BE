@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.angryzyh.ylb.mapper.IncomeRecordMapper">
+
+    <resultMap id="BaseResultMap" type="com.angryzyh.ylb.pojo.po.IncomeRecordPo">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="uid" column="uid" jdbcType="INTEGER"/>
+            <result property="prodId" column="prod_id" jdbcType="INTEGER"/>
+            <result property="bidId" column="bid_id" jdbcType="INTEGER"/>
+            <result property="bidMoney" column="bid_money" jdbcType="DECIMAL"/>
+            <result property="incomeDate" column="income_date" jdbcType="DATE"/>
+            <result property="incomeMoney" column="income_money" jdbcType="DECIMAL"/>
+            <result property="incomeStatus" column="income_status" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,uid,prod_id,
+        bid_id,bid_money,income_date,
+        income_money,income_status
+    </sql>
+</mapper>
