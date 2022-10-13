@@ -8,6 +8,7 @@ class MicrWebApplicationTests {
 
     @Test
     void contextLoads() {
+
     }
 
 }

@@ -17,4 +17,4 @@ dubbo:
   registry:
     id: zk-registry
     address: zookeeper://192.168.11.111:2181
-
+    timeout: 60000

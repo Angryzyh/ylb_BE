@@ -1,4 +1,4 @@
-package com.angryzyh.ylb.constant;
+package com.angryzyh.ylb.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -42,8 +42,8 @@ public enum REnum {
 
     API_ERROR("C0001","调用第三方服务出错");
 
-    private String code;
-    private String msg;
+    private final String code;
+    private final String msg;
 
     /*
     00000 一切 ok 正确执行后的返回
