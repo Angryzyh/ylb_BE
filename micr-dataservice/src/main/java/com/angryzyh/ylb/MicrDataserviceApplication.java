@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @EnableDubbo
-@MapperScan("com.angryzyh.ylb.mapper")
 public class MicrDataserviceApplication {
 
     public static void main(String[] args) {

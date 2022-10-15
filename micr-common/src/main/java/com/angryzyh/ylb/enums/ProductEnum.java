@@ -1,7 +1,10 @@
 package com.angryzyh.ylb.enums;
 
+import cn.hutool.core.convert.impl.EnumConverter;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+
+import java.util.Objects;
 
 public class ProductEnum {
     @Getter
@@ -12,6 +15,10 @@ public class ProductEnum {
         SCATTERER_PRODUCT(2, "散标产品");
         private final Integer code;
         private final String name;
+
+        public static Boolean checkProductTypeUtil(Integer typeCode) {
+            return Objects.equals(typeCode, PREFERRED_PRODUCT.getCode()) || Objects.equals(typeCode, SCATTERER_PRODUCT.getCode());
+        }
     }
 
     @Getter
@@ -23,4 +30,6 @@ public class ProductEnum {
         private final Integer code;
         private final String description;
     }
+
+
 }

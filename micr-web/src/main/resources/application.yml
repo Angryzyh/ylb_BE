@@ -10,6 +10,12 @@ spring:
     #解决springboot2.6.2使用swagger的问题
     pathmatch:
       matching-strategy: ant_path_matcher
+    format:
+      date: yyyy-MM-dd HH:mm:ss
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    default-property-inclusion : non-null
 
 dubbo:
   application:

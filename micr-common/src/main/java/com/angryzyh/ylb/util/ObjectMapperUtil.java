@@ -1,8 +1,11 @@
 package com.angryzyh.ylb.util;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.util.StringUtils;
+
+import java.util.List;
 
 public class ObjectMapperUtil {
     //定义常量对象
@@ -36,6 +39,19 @@ public class ObjectMapperUtil {
         }
         try {
             return MAPPER.readValue(json, target);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+            throw new RuntimeException("json转化异常");
+        }
+    }
+
+    //3.将任意的JSON串转化为 指定的集合对象
+    public static <T> List<T> toObjectWhitList(String json, Class<T> target) {
+        if (!StringUtils.hasLength(json) || target == null) {
+            throw new RuntimeException("传递的参数不能为null");
+        }
+        try {
+            return MAPPER.readValue(json, MAPPER.getTypeFactory().constructCollectionLikeType(List.class, target));
         } catch (JsonProcessingException e) {
             e.printStackTrace();
             throw new RuntimeException("json转化异常");

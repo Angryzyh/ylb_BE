@@ -1,6 +1,7 @@
 package com.angryzyh.ylb.service;
 
 import com.angryzyh.ylb.pojo.po.ProductInfoPo;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 
 import java.math.BigDecimal;
 
@@ -11,7 +12,10 @@ import java.math.BigDecimal;
  */
 public interface ProductInfoService {
 
-    //获取 平台产品历史平均年化收益率
-    BigDecimal getHistoryAvgRate();
+	//获取 平台产品历史平均年化收益率
+	BigDecimal getHistoryAvgRate();
+
+	// 分页查询 不同类型的产品
+	Page<ProductInfoPo> getProductListByPage(Integer productType, Integer currentPage, Integer pageSize);
 
 }
